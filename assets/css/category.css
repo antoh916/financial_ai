@@ -1,0 +1,20 @@
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.category-tabs a {
+    background-color: #e6e6e6;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.category-tabs a.active {
+    background-color: #0f3d3e;
+    color: #fff;
+}

@@ -1,0 +1,19 @@
+.bg-header-top {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: #e6e6e6;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links a {
+    color: #676464;
+    text-decoration: underline !important;
+}

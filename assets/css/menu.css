@@ -1,0 +1,38 @@
+.bg-main-menu {
+    background-color: #f5f5f5;
+}
+
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.search-bar input {
+    padding-left: 40px;
+    border-radius: 10px;
+    background-color: #e6e6e6;
+    border: none;
+}
+
+.cart-button {
+    background-color: #0d3c3f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-button i {
+    font-size: 18px;
+}

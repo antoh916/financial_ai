@@ -1,0 +1,74 @@
+.layanan-page {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+.layanan-page .container {
+    max-width: 1320px;
+    margin: auto;
+}
+
+.layanan-page .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.layanan-page .header h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.layanan-page .header a {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 14px;
+}
+
+.layanan-page .card-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.layanan-page .card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 31%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.layanan-page .card:hover {
+    transform: translateY(-5px);
+}
+
+.layanan-page .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.layanan-page .card-content {
+    padding: 15px;
+}
+
+.layanan-page .category {
+    display: inline-block;
+    font-size: 12px;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.layanan-page .card-content h3 {
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+.layanan-page .author {
+    font-size: 12px;
+    color: #888;
+}
