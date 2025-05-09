@@ -51,14 +51,14 @@
 </head>
 <body>
     <h1>Invoice List</h1>
-    
+    <?php echo form_open('admin/transaction/approve'); ?>
     <?php if (empty($invoices)): ?>
         <p>No invoices found.</p>
     <?php else: ?>
         <?php foreach ($invoices as $invoice): ?>
             <div class="invoice-card">
                 <div class="invoice-header">
-                    <h2>Invoice #<?php echo htmlspecialchars($invoice->invoiceNumber); ?></h2>
+                    <h2>Invoice #<?php echo htmlspecialchars($invoice->invoice_number); ?></h2>
                     <div class="invoice-status status-<?php echo strtolower($invoice->status); ?>">
                         <?php echo $invoice->status; ?>
                     </div>
@@ -66,8 +66,8 @@
                 
                 <div class="invoice-body">
                     <p><strong>ID:</strong> <?php echo $invoice->id; ?></p>
-                    <p><strong>Order Date:</strong> <?php echo date('F j, Y', strtotime($invoice->orderDate)); ?></p>
-                    <p><strong>Uploaded At:</strong> <?php echo date('F j, Y g:i A', strtotime($invoice->uploadedAt)); ?></p>
+                    <p><strong>Order Date:</strong> <?php echo date('F j, Y', strtotime($invoice->order_date)); ?></p>
+                    <p><strong>Uploaded At:</strong> <?php echo date('F j, Y g:i A', strtotime($invoice->uploaded_at)); ?></p>
                     <p><strong>Uploaded By:</strong> <?php echo $invoice->uploadedBy->username ?? 'N/A'; ?></p>
                     
                     <h3>Invoice Details</h3>
@@ -79,7 +79,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($invoice->invoiceDetails as $detail): ?>
+                            <?php foreach ($invoiceDetails as $detail): ?>
                                 <tr>
                                     <td><?php echo htmlspecialchars($detail->profession); ?></td>
                                     <td><?php echo htmlspecialchars($detail->salary); ?></td>
@@ -91,5 +91,8 @@
             </div>
         <?php endforeach; ?>
     <?php endif; ?>
+    <button type="submit" class="btn btn-primary mt-3">Approve</button>
+        <a href="<?php echo base_url('admin/transaction'); ?>" class="btn btn-secondary mt-3">Cancel</a>
+    <?php echo form_close(); ?>
 </body>
 </html>

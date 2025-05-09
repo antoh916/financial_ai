@@ -28,8 +28,15 @@ class Invoice_detail_model extends CI_Model {
      * @return array Invoice details
      */
     public function get_by_invoice_id($invoice_id) {
+        $this->db->join('invoice_details','invoices.external_id = invoice_details.invoice_id');
         $this->db->where('invoice_id', $invoice_id);
-        $query = $this->db->get($this->table);
+        $query = $this->db->get('invoices');
+        return $query->result();
+    }
+
+    public function get_by_external_id($invoice_id){
+        $this->db->where('external_id', $invoice_id);
+        $query = $this->db->get('invoices');
         return $query->result();
     }
 }

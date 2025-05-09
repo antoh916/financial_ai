@@ -8,6 +8,7 @@ class Invoice_controller extends CI_Controller {
         // Load necessary libraries and helpers
         $this->load->helper('url');
         $this->load->library('session');
+		$this->load->model('Invoice_detail_model');
     }
 
     /**
@@ -126,19 +127,16 @@ class Invoice_controller extends CI_Controller {
     /**
      * Display invoice data from session
      */
-    public function display() {
+    public function display($id) {
         // Get invoice data from session
-        $invoices = $this->session->userdata('invoice_data');
-        
-        if ($invoices) {
-            // Pass data to view
-            $data = array(	'title'			=> 'Payment',
+        $this->db->where('external_id', $id);
+        $invoices = $this->Invoice_detail_model->get_by_external_id($id);
+        $invoicesDetail = $this->Invoice_detail_model->get_by_invoice_id($id);
+        $data = array(	'title'			=> 'Payment',
 						'invoices'		=> $invoices,
+                        'invoiceDetails' => $invoicesDetail,
 						'isi'			=> 'admin/transaction/list2');
-		    $this->load->view('admin/layout/wrapper', $data, FALSE);
-        } else {
-            echo "No invoice data found";
-        }
+        $this->load->view('admin/layout/wrapper', $data, FALSE);
     }
     
     /**

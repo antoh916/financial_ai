@@ -5,7 +5,7 @@
 });
 </script>
 <p class="btn-group">
-  <a href="<?php echo base_url('admin/galeri/tambah') ?>" class="btn btn-success btn-lg">
+  <a href="<?php echo base_url('admin/transaction/tambah') ?>" class="btn btn-success btn-lg">
   <i class="fa fa-plus"></i> Invoice Pembayaran</a>
 
 </p>
